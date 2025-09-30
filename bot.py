@@ -1675,7 +1675,8 @@ def handle_aadhar(m):
         progress_msg = bot.send_message(m.chat.id, "🔍 Searching for Aadhaar information... (This may take 4-5 minutes)")
         
         try:
-            r = requests.get(f"https://numinfoapi.zerovault.workers.dev/search/aadhar?value={aid}&key=bugsec", timeout=300)
+            # Updated API endpoint
+            r = requests.get(f"http://osintx.info/API/krobetahack.php?key=P6NW6D1&type=id_number&term={aid}", timeout=300)
             logger.info(f"Aadhaar API Response Status: {r.status_code}")
             
             try:
@@ -1688,39 +1689,56 @@ def handle_aadhar(m):
                 return bot.send_message(m.chat.id, "❌ API request failed. Please try again later.")
             
             try:
-                # API से आया हुआ रॉ टेक्स्ट लें
-                raw_response_text = r.text
-                logger.info(f"Aadhaar API Raw Response: {raw_response_text[:500]}...") # लॉग में पहले 500 कैरेक्टर सेव करें
+                # Parse JSON response
+                data = r.json()
+                logger.info(f"Aadhaar API Response: {str(data)[:500]}...") # Log first 500 characters
             except Exception as e:
-                logger.error(f"Error reading response text: {e}")
+                logger.error(f"Error parsing JSON response: {e}")
                 refund_credit(m.from_user.id)
-                return bot.send_message(m.chat.id, "❌ Could not read API response.")
+                return bot.send_message(m.chat.id, "❌ Could not parse API response.")
 
-            # --- यहाँ मुख्य लॉजिक बदल गया है ---
-            # हम अब JSON को पार्स नहीं करेंगे, बल्कि सीधे रॉ टेक्स्ट को भेजेंगे
-            # लेकिन पहले चेक करेंगे कि रेस्पॉन्स खाली तो नहीं है
-            if not raw_response_text or raw_response_text.strip() == "":
+            # Check if response is empty or not a list
+            if not data or not isinstance(data, list) or len(data) == 0:
                 refund_credit(m.from_user.id)
                 return bot.send_message(m.chat.id, "📭 No Aadhaar Data Found!")
             
-            # रेस्पॉन्स को एक सुंदर फॉर्मेट में भेजने के लिए प्रीपेयर करें
+            # Format the response
             header = f"""
-🔍 <b>Raw API Response for Aadhaar:</b> {aid[:4]}XXXXXXXX{aid[-2:]}
+🔍 <b>Aadhaar Information Found:</b> {aid[:4]}XXXXXXXX{aid[-2:]}
 ━━━━━━━━━━━━━━━━━━
-<code>
 """
             
-            footer = f"""
-</code>
+            # Process each record in the response
+            formatted_records = []
+            for i, record in enumerate(data, 1):
+                # Format address
+                address_parts = record.get('address', '').replace('!', ', ').split(',')
+                address = ', '.join([part.strip() for part in address_parts if part.strip()])
+                
+                # Format record details
+                record_text = f"""
+<b>Record #{i}</b>
+📱 <b>Mobile:</b> {record.get('mobile', 'N/A')}
+👤 <b>Name:</b> {record.get('name', 'N/A')}
+👨‍👦 <b>Father's Name:</b> {record.get('father_name', 'N/A')}
+🏠 <b>Address:</b> {address if address else 'N/A'}
+📞 <b>Alt Mobile:</b> {record.get('alt_mobile', 'N/A')}
+🌐 <b>Circle:</b> {record.get('circle', 'N/A')}
+🆔 <b>ID Number:</b> {record.get('id_number', 'N/A')}
+📧 <b>Email:</b> {record.get('email', 'N/A') if record.get('email') else 'N/A'}
 ━━━━━━━━━━━━━━━━━━
-✅ <b>Search completed!</b>
+"""
+                formatted_records.append(record_text)
+            
+            footer = f"""
+✅ <b>Search completed!</b> Found {len(data)} record(s)
 💳 <b>Credits Used:</b> 1
 """
             
-            # हेडर और फुटर के साथ पूरा मैसेज बनाएं
-            full_message = header + raw_response_text + footer
+            # Combine all parts
+            full_message = header + "".join(formatted_records) + footer
 
-            # अब `send_long` फंक्शन का इस्तेमाल करके लंबे मैसेज को छोटे हिस्सों में भेजें
+            # Send the message using send_long function
             send_long(m.chat.id, full_message)
             
             add_history(m.from_user.id, aid, "AADHAAR_RAW")
