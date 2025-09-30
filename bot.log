@@ -1,0 +1,69 @@
+2025-09-30 16:44:36,671 - __main__ - INFO - DNS resolution successful for api.telegram.org
+2025-09-30 16:44:36,672 - __main__ - INFO - Database connected successfully
+2025-09-30 16:44:36,675 - __main__ - INFO - Database tables setup successfully
+2025-09-30 16:44:36,759 - __main__ - INFO - Bot initialized successfully
+2025-09-30 16:44:36,763 - __main__ - INFO - Starting bot...
+2025-09-30 16:44:36,763 - __main__ - INFO - Polling started...
+2025-09-30 16:44:36,802 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.37.5:8080
+2025-09-30 16:44:36,803 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-30 16:46:30,771 - __main__ - INFO - DNS resolution successful for chxphone.vercel.app
+2025-09-30 16:46:32,812 - __main__ - INFO - API Request: https://chxphone.vercel.app/lookup?number=8419820640, Status: 403
+2025-09-30 16:46:32,842 - __main__ - WARNING - Request to https://chxphone.vercel.app/lookup?number=8419820640 returned status 403
+2025-09-30 16:46:32,842 - __main__ - WARNING - Response text: {"error":"Invalid key"}
+
+2025-09-30 16:46:57,722 - __main__ - ERROR - Could not notify user 136817688: A request to the Telegram API was unsuccessful. Error code: 403. Description: Forbidden: bots can't send messages to bots
+2025-09-30 16:48:18,976 - __main__ - INFO - DNS resolution successful for family-members-n5um.vercel.app
+2025-09-30 16:48:22,108 - __main__ - INFO - API Request: https://family-members-n5um.vercel.app/fetch?aadhaar=222222222222&key=paidchx, Status: 200
+2025-09-30 16:48:32,544 - __main__ - INFO - DNS resolution successful for family-members-n5um.vercel.app
+2025-09-30 16:48:33,514 - __main__ - INFO - API Request: https://family-members-n5um.vercel.app/fetch?aadhaar=219541263230&key=paidchx, Status: 200
+2025-09-30 16:49:24,661 - __main__ - INFO - DNS resolution successful for family-members-n5um.vercel.app
+2025-09-30 16:49:25,605 - __main__ - INFO - API Request: https://family-members-n5um.vercel.app/fetch?aadhaar=219541263231&key=paidchx, Status: 200
+2025-09-30 16:49:52,187 - __main__ - INFO - DNS resolution successful for pincode-info-j4tnx.vercel.app
+2025-09-30 16:49:54,720 - __main__ - INFO - API Request: https://pincode-info-j4tnx.vercel.app/pincode=233226, Status: 200
+2025-09-30 16:59:13,809 - __main__ - INFO - DNS resolution successful for upi-info.vercel.app
+2025-09-30 16:59:15,793 - __main__ - INFO - API Request: https://upi-info.vercel.app/api/upi?upi_id=vyasjayesh2345@okicici&key=456, Status: 200
+2025-09-30 17:00:50,465 - __main__ - INFO - DNS resolution successful for raju09.serv00.net
+2025-09-30 17:00:58,570 - __main__ - INFO - API Request: https://raju09.serv00.net/ICMR/ICMR_api.php?phone=6388135345, Status: 200
+2025-09-30 17:35:57,041 - __main__ - INFO - DNS resolution successful for upi-info.vercel.app
+2025-09-30 17:36:00,075 - __main__ - INFO - API Request: https://upi-info.vercel.app/api/upi?upi_id=nadarmari@fam&key=456, Status: 200
+2025-09-30 18:05:55,863 - __main__ - INFO - DNS resolution successful for tg-info-neon.vercel.app
+2025-09-30 18:06:00,234 - __main__ - INFO - API Request: https://tg-info-neon.vercel.app/user-details?user=7362483878, Status: 200
+2025-09-30 18:08:09,287 - __main__ - INFO - DNS resolution successful for tg-info-neon.vercel.app
+2025-09-30 18:08:12,634 - __main__ - INFO - API Request: https://tg-info-neon.vercel.app/user-details?user=8022538577, Status: 200
+2025-09-30 18:09:14,111 - __main__ - INFO - DNS resolution successful for tg-info-neon.vercel.app
+2025-09-30 18:09:15,790 - __main__ - INFO - API Request: https://tg-info-neon.vercel.app/user-details?user=7820936754, Status: 200
+2025-09-30 18:12:00,807 - __main__ - INFO - DNS resolution successful for tg-info-neon.vercel.app
+2025-09-30 18:12:02,878 - __main__ - INFO - API Request: https://tg-info-neon.vercel.app/user-details?user=7756697959, Status: 200
+2025-09-30 18:15:17,092 - __main__ - INFO - DNS resolution successful for tg-info-neon.vercel.app
+2025-09-30 18:15:18,128 - __main__ - INFO - API Request: https://tg-info-neon.vercel.app/user-details?user=5619027766, Status: 200
+2025-09-30 18:16:08,413 - __main__ - INFO - Aadhaar API Response Status: 530
+2025-09-30 18:25:20,779 - __main__ - INFO - DNS resolution successful for pincode-info-j4tnx.vercel.app
+2025-09-30 18:25:24,414 - __main__ - INFO - API Request: https://pincode-info-j4tnx.vercel.app/pincode=273201, Status: 200
+2025-09-30 18:34:21,947 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-09-30 18:34:22,353 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/__init__.py", line 1073, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/util.py", line 108, in raise_exceptions
+    raise self.exception_info
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/util.py", line 90, in run
+    task(*args, **kwargs)
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/__init__.py", line 649, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/__init__.py", line 623, in get_updates
+    json_updates = apihelper.get_updates(self.token, offset, limit, timeout, allowed_updates, long_polling_timeout)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/apihelper.py", line 321, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/container/.local/lib/python3.12/site-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
