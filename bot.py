@@ -1305,7 +1305,7 @@ def handle_india_number_response(message):
     
     try:
         r = requests.get(
-            f"http://osintx.info/API/krobetahack.php?key=P6NW6D1&type=mobile&term={num}",
+            f"http://osintx.info/API/krobetahack.php?key=SHAD0WINT3L&type=mobile&term={num}",
             timeout=30
         )
         
@@ -1676,7 +1676,7 @@ def handle_aadhar(m):
         
         try:
             # Updated API endpoint
-            r = requests.get(f"http://osintx.info/API/krobetahack.php?key=P6NW6D1&type=id_number&term={aid}", timeout=300)
+            r = requests.get(f"http://osintx.info/API/krobetahack.php?key=SHAD0WINT3L&type=id_number&term={aid}", timeout=300)
             logger.info(f"Aadhaar API Response Status: {r.status_code}")
             
             try:
